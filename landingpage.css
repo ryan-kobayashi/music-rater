@@ -31,10 +31,6 @@ nav ul {
     justify-content: space-between;
 }
 
-nav ul li.logo{
-    float: left;
-}
-
 nav ul .search-icon {
     height: 30px;
     width: 240px;
@@ -42,7 +38,6 @@ nav ul .search-icon {
     flex: initial;
     background: #f2f2f2;
     border-radius: 5px;
-    text-align: center;
 }
 
 nav ul .search-icon input {
@@ -69,8 +64,8 @@ nav ul .search-icon .icon span {
 }
 
 nav ul div.menu {
-    padding: 0 10px;
     display: flex;
+    flex: initial;
 }
 
 nav ul div.menu a {
@@ -88,7 +83,6 @@ nav ul div.menu a:hover {
 /* Hamburger icon */
 nav ul li.hamburger {
     font-size: 16px;
-    flex: none;
     display: none;
 }
 
@@ -107,7 +101,7 @@ nav ul li.hamburger:hover span:before {
 /* Account icon */
 nav ul li.account {
     font-size: 16px;
-    flex: none;
+    flex: initial;
 }
 
 nav ul li.account span {
@@ -131,24 +125,26 @@ nav ul li.account span {
 }
 
 @media screen and (max-width: 800px) {
-    nav ul li.hamburger {
+    nav ul div.menu li.hamburger {
         display: block;
     }
     nav {
+        z-index: 1;
         padding: 10px 10px 10px 10px;
     }
-    nav ul div.menu {
+    nav ul div.menu .text{
+        z-index: -1;
         position: fixed;
-        top: 60px;
+        top: -220px;
         right: 0;
         width: 100%;
         background: #a8c9f6;
         display: inline-block;
-    }
-    nav ul div.menu li {
         text-align: center;
-        line-height: 10px;
-        margin: 10px 0;
+        transition: top .4s;
+    }
+    nav ul div.menu .text.show {
+        top: 60px;
     }
 
 }
