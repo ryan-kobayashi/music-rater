@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <!--
     Header:
@@ -8,26 +8,49 @@
         link to css style sheet
 -->
 <head>
-
-    <meta charset="utf-8" />
-    <title>MusicRater - Welcome</title>
-
-    <link rel="stylesheet" href="landingpage.css" />
-
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <title>Your Music Rater - Welcome</title>
+    <link rel='stylesheet' href='landingpage.css' />
+    <link rel='stylesheet' href=' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' />
 </head>
 
+<!--
+    Body:
+        navbar,
+-->
 <body>
 
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="topsongs.html">Charts</a></li>
-        <li><a href="#home">Friends</a></li>
-        <li><a href="#home">Search</a></li>
-        <li style="float:right"><a href="#home">Login</a></li>
-        <li style="float:right"><a href="#home">Sign Up</a></li>
-    </ul>
-
-<iframe src="topsongs.html"></iframe>
+    <header>
+        <nav>
+            <ul>
+                <li class='logo'>
+                    <h1>
+                        <!-- TODO: replace with an actual logo down the line -->
+                        <span class='name'>Your Music Rater</span>
+                        <span class='logo'>&#127925;</span>
+                    </h1>
+                </li>
+                <li class='search-icon'>
+                    <input type='search' placeholder='Search'>
+                    <label class='icon'>
+                        <span class='fa fa-search'></span>
+                    </label>
+                </li>
+                <div class='menu'>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>About</a></li>
+                    <li><a href='topsongs.html'>Charts</a></li>
+                    <li><a href='#'>Friends</a></li>
+                    <li><a href='#'>Contact</a></li>
+                </div>
+                <li class='hamburger'><span class='fas fa-bars'></span></li>
+                <li class='account'><span class='fas fa-user'></span></li>
+            </ul>
+        </nav>
+    </header> 
 
 </body>
 </html>
