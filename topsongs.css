@@ -1,16 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap");
 
-.flex-container{
+.topsongs-container{
     display: flex;
     flex-direction: column;
-    background-color: rgb(0, 0, 0);
 }
 
-.flex-container > div{
-    background-color: azure;
+.song-container{
+    background-color: #7ab1ff;
+    margin: 10px 10px 10px 10px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.song-title{
+    height: 25px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.album-cover{
+    height: 110px;
+}
+
+.album-img{
+    margin: 5px 0px 5px 5px;
     width: 100px;
-    text-align: center;
-    margin: 10px;
-    line-height: 75px;
-    font-size: 30px;
+    height: 100px;
+}
+
+.song-title {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.song-container-text{
+    margin: 5px;
+}
+
+.song-text{
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.song-artist{
+    font-size:20px;
+    text-decoration: none;
+    color: aliceblue;
 }
