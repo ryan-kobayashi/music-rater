@@ -8,13 +8,12 @@
 .song-container{
     background-color: #7ab1ff;
     margin: 10px 10px 10px 10px;
-    font-size: 25px;
     display: flex;
     flex-direction: row;
 }
 
 .song-title{
-    height: 25px;
+    font-size: 25px;
     text-align: left;
     margin-top: 5px;
 }
@@ -40,7 +39,7 @@
 
 .song-text{
     font-size: 15px;
-    margin-top: 5px;
+
 }
 
 .song-artist{
