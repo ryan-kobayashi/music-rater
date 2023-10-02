@@ -26,7 +26,7 @@
     <header>
         <nav class="navbar container flex">
             <!-- TODO: replace with an actual logo down the line -->
-            <h1 class='logo'>
+            <h1 id='navlogo' class='logo'>
                 <span class='name'>Your Music Rater</span>
                 <span class='logoicon'>&#127925;</span>
             </h1>
@@ -38,11 +38,11 @@
             <ul class="navlinks flex">
                 <li><a href='landingpage.html'>Home</a></li>
                 <li><a href='topsongs.html'>Charts</a></li>
-                <li><a href='#'>About</a></li>
-                <li><a href='#faq'>FAQs</a></li>
-                <li><a href='#'>Contact</a></li>
-                <li><span class='fas fa-bars'></span></li>
-                <li><span class='fas fa-user'></span></li>
+                <li><a href='#aboutsection'>About</a></li>
+                <li><a href='#faqsection'>FAQs</a></li>
+                <li><a href='#contactsection'>Contact</a></li>
+                <li><span id="hamburger" class='fas fa-bars'></span></li>
+                <li><span id="account-btn" class='fas fa-user'></span></li>
             </ul>           
         </nav>
     </header> 
@@ -89,14 +89,6 @@
         </div>
     </section>
 
-    <section class="charts" id="chartssection">
-        <div class="container">
-            <div class="charts-title">
-                <h1>Simple and easy to use</h1>
-                <p>with a free online account.</p>
-            </div>
-        </div>
-    </section>
 
 
     <!-- about us section -->
@@ -148,7 +140,7 @@
     </script>
 
     <!-- contacts section-->
-    <section class="contact" id="contact">
+    <section class="contact" id="contactsection">
         <div class="container">
             <div class="contact-title">
                 <h1>Contact Us</h1>
@@ -173,6 +165,12 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span>Copyright (c) 2023 All Rights Reserved Your Music Rater</span>
         </div>
     </section>
 
