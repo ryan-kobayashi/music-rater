@@ -6,6 +6,10 @@
     padding: 0px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -56,6 +60,8 @@ header {
 .navlinks {
     gap: 20px;
     list-style: none;
+    display: flex;
+    flex: initial;
 }
 .navlinks a {
     padding: 20px 0;
@@ -66,10 +72,21 @@ header {
 .navlinks a:hover {
     background-color: rgb(56, 126, 248);
 }
+#hamburger {
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+#hamburger:hover:before {
+    content: '\f00d';
+}
+#account-btn {
+    text-align: center;
+    cursor: pointer;
+}
 
 .homepage {
     position: relative;
-    height: 50vh;
     width: 100%;
 }
 .homepage .content {
@@ -95,10 +112,9 @@ header {
 }
 
 section {
+    padding-top: 10%;
     position: relative;
-}
-#usesection {
-    height: 50vh;
+    height: auto;
 }
 section h1 {
     font-size: 37px;
@@ -129,9 +145,6 @@ section .card img {
     margin-bottom: 20px;
 }
 
-#aboutsection {
-    background-color: #d7e7fa;
-}
 .about-title {
     text-align: center;
     padding-top: 50px;
@@ -149,7 +162,6 @@ section .card img {
     padding-left: 20px;
     padding-bottom: 50px;
 }
-
 
 .contact .row {
     justify-content: space-between;
@@ -192,4 +204,16 @@ section .card img {
     background: #333;
     cursor: pointer;
     transition: 0.2s;
+}
+
+.footer {
+    background: #7cb3f6;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 1250px) {
+    #navlogo .name {
+        display: none;
+    }
+    
 }
