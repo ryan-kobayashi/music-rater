@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #7cb3f6;
+    z-index: 100;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+.searchbar {
+    height: 30px;
+    width: 240px;
+    flex: initial;
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+.searchbar input {
+    height: 100%;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 5px 0 0 5px;
+}
+.searchbar span {
+    color: #222222;
+    padding-left: 7px;
+    padding-top: 4px;
+}
+
+.navlinks {
+    gap: 20px;
+    list-style: none;
+    display: flex;
+    flex: initial;
+}
+.navlinks a {
+    padding: 20px 0;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.navlinks a:hover {
+    background-color: rgb(56, 126, 248);
+}
+#hamburger {
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+#hamburger:hover:before {
+    content: '\f00d';
+}
+#account-btn {
+    text-align: center;
+    cursor: pointer;
+}
+
+.homepage {
+    position: relative;
+    width: 100%;
+}
+.homepage .content {
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: -20px;
+    padding-right: 20px;
+}
+.homepage .text {
+    text-align: left;
+    margin: 60px 40px 60px 40px;
+}
+.homepage .text h1 {
+    font-size: 45px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+}
+#hpimg {
+    float: right;
+    width: 50%;
+    margin-left: -5.5% !important;
+}
+
+section {
+    padding-top: 10%;
+    position: relative;
+    height: auto;
+}
+section h1 {
+    font-size: 37px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+}
+.use-title {
+    text-align: center;
+}
+section .cards {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section .card {
+    width: calc((100% / 3) - 70px);
+    text-align: center;
+    list-style: none;
+    background-color: #d7e7fa;
+    padding: 70px 0px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+section .card img {
+    height: auto;
+    width: 100%;
+    border-radius: 70%;
+    margin-bottom: 20px;
+}
+
+.about-title {
+    text-align: center;
+    padding-top: 50px;
+}
+.about .info {
+    margin-top: 30px;
+}
+.about .row {
+   padding: 0  10px;
+}
+.about h2 {
+    margin: 30px 0 10px;
+}
+.about ul {
+    padding-left: 20px;
+    padding-bottom: 50px;
+}
+
+.contact .row {
+    justify-content: space-between;
+    margin: 60px 0 90px;
+}
+.contact .row .col {
+    padding: 0 10px;
+    width: calc(100% / 2 - 50px)
+}
+.contact .row .col p {
+    color: #585858;
+    margin-bottom: 10px;
+}
+.contact .row .col p i{
+    margin-right: 10px;
+}
+.contact form input {
+    width: 100%;
+    height: 45px;
+    margin-bottom:  20px;
+    padding: 0 15px;
+    outline: none;
+    border: 1px solid #bfbfbf;
+}
+.contact form textarea {
+    padding: 15px;
+    width: 100%;
+    height: 150px;
+    outline: none;
+    resize: none;
+    border: 1px solid #bfbfbf;
+}
+.contact form button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+    border: none;
+    background: #333;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer {
+    background: #7cb3f6;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 1250px) {
+    #navlogo .name {
+        display: none;
+    }
+    
+}

@@ -1,7 +1,204 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-iframe {
-    width: 100%;
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+/* Navingation bar */
+nav {
+    background: #7ab1ff;
+    position: sticky;  
+    padding: 10px 10px 10px 20px;
+}
+  
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul .search-icon {
+    height: 30px;
+    width: 240px;
+    display: flex;
+    flex: initial;
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+
+nav ul .search-icon input {
     height: 100%;
-    border: dotted;
-  }
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 5px 0 0 5px;
+}
+
+nav ul .search-icon .icon {
+    height: 100%;
+    width: 40px;
+    line-height: 33px;
+    text-align: center;
+    background: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0;
+}
+
+nav ul .search-icon .icon span {
+    color: #222222;
+}
+
+nav ul div.menu {
+    display: flex;
+    flex: initial;
+}
+
+nav ul div.menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    padding: 10px 10px;
+    color: rgb(0, 0, 0);
+}
+
+nav ul div.menu a:hover {
+    background-color: rgb(56, 126, 248);
+}
+
+/* Hamburger icon */
+nav ul li.hamburger {
+    font-size: 20px;
+    display: none;
+}
+
+nav ul li.hamburger span {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+nav ul li.hamburger:hover span:before {
+    content: '\f00d';
+}
+
+/* Account icon */
+nav ul li.account {
+    font-size: 20px;
+    flex: initial;
+}
+
+nav ul li.account span {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+
+/* Homepage */
+.homepage {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.homepage .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage .text {
+    text-align: left;
+    margin: 60px 40px 60px 40px;
+}
+
+.homepage .text h1 {
+    font-size: 40px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+}
+
+#hpimg {
+    float: right;
+    margin: auto;
+    width: 50%;
+}
+
+
+/* About */
+.about {
+    padding-top: 80px;
+}
+
+.about .section-title {
+    text-align: center;
+}
+
+.about .cards {
+    margin-top: 50px;
+}
+
+.about .card {
+    width: calc(100%/3 - 30px);
+    text-align: center;
+    background-color: #a8c9f6;
+    padding: 40px 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
+    margin-bottom: 40px;
+}
+
+.about .cards img {
+    height: 180px;
+    width: 240px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Adjusting the style depending on screen resolution */
+@media screen and (max-width: 1052px) {
+    nav { padding: 10px 10px 10px 10px }
+    nav ul li.logo span.name {
+        display: none;
+    }
+    nav ul li.logo span.logo {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul div.menu li.hamburger {
+        display: block;
+    }
+    nav {
+        z-index: 1;
+        padding: 10px 10px 10px 10px;
+    }
+    nav ul div.menu .text{
+        z-index: -1;
+        position: fixed;
+        top: -220px;
+        right: 0;
+        width: 100%;
+        background: #a8c9f6;
+        display: inline-block;
+        text-align: center;
+        transition: top .4s;
+    }
+    nav ul div.menu .text.show {
+        top: 60px;
+    }
+    
+
+}
