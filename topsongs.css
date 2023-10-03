@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap");
+
+.topsongs-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.song-container{
+    background-color: #7ab1ff;
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.song-title{
+    font-size: 25px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.album-cover{
+    height: 110px;
+}
+
+.album-img{
+    margin: 5px 0px 5px 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.song-title {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.song-container-text{
+    margin: 5px;
+}
+
+.song-text{
+    font-size: 15px;
+
+}
+
+.song-artist{
+    font-size:20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.rating{
+    height: 10px;
+}

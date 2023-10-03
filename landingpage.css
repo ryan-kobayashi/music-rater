@@ -135,6 +135,11 @@ nav ul li.account span {
     width: 50%;
 }
 
+/* Charts */
+iframe{
+    height: 400px;
+    width: 400px;
+}
 
 /* About */
 .about {
