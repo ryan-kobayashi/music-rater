@@ -131,14 +131,6 @@
         </div>
     </section>
 
-    <!-- script for hamburger functionality in mobile mode -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script>
-        $('nav ul div.menu .hamburger').click(function(){
-            $('nav ul div.menu .text').toggleClass("show");
-        });
-    </script>
-
     <!-- contacts section-->
     <section class="contact" id="contactsection">
         <div class="container">
@@ -173,6 +165,14 @@
             <span>Copyright (c) 2023 All Rights Reserved Your Music Rater</span>
         </div>
     </section>
+
+    <!-- script for hamburger functionality in mobile mode -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $('#hamburger').click(function(){
+            $('.navlinks a').toggleClass("show");
+        });
+    </script>
 
 </body>
 
