@@ -4,6 +4,7 @@
     font-family: "Roboto", sans-serif;
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 html {
@@ -175,7 +176,8 @@ section .card {
     text-align: center;
     list-style: none;
     background-color: #d7e7fa;
-    padding: 70px 0px;
+    padding: 40px 15px;
+    margin-bottom: 40px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -278,14 +280,14 @@ section .card img {
     padding: 20px 0;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1080px) {
     #navlogo .name {
         display: none;
     }
     
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 896px) {
     .navlinks {
         z-index: 1;
         padding: 20px 0;
@@ -306,5 +308,32 @@ section .card img {
     }
     #hamburger {
         display: block;
+    }
+    .nav h1 {
+        font-size: 40px;
+    }
+    section h1 {
+        font-size: 32px;
+    }
+    section .cards {
+        flex-direction: column;
+    }
+    section .cards .card {
+        width: calc((100% / 2) - 15px);
+    }
+    .contact .row {
+        flex-direction: column;
+    }
+    .contact .row .col {
+        width: 100%;
+    }
+    .contact .row .col:last-child {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    section .cards .card {
+        width: 100%
     }
 }
