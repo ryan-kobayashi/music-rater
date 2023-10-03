@@ -124,6 +124,10 @@ header {
     position: relative;
     margin: 0 3% 0 3%;
 }
+.chart-title {
+    padding-bottom: 20px;
+    text-align: center;
+}
 
 .chart-head{
     font-size: 15px;
@@ -131,18 +135,22 @@ header {
     float: left;
     border-radius: 10px 10px 0 0;
     border-style: none;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
 }
 
 .chart iframe{
     height: 500px;
     width: 100%;
     position:relative;
+    border-radius: 0 10px 10px 10px;
+    /*
     border-color: #d7e7fa;
     border-style: solid;
     border-width: 3px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-right: none;
+     */
+     border-style: none;
 }
 
 section {
@@ -181,7 +189,6 @@ section .card img {
 
 .about-title {
     text-align: center;
-    padding-top: 50px;
 }
 .about .info {
     margin-top: 30px;
@@ -194,7 +201,6 @@ section .card img {
 }
 .about ul {
     padding-left: 20px;
-    padding-bottom: 50px;
 }
 
 .faq-title{
