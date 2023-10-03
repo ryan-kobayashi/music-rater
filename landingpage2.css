@@ -169,7 +169,7 @@ section .card img {
 }
 .contact .row .col {
     padding: 0 10px;
-    width: calc(100% / 2 - 50px)
+    width: calc(100% / 2 - 50px);
 }
 .contact .row .col p {
     color: #585858;
@@ -185,6 +185,7 @@ section .card img {
     padding: 0 15px;
     outline: none;
     border: 1px solid #bfbfbf;
+    font-size: 14px;
 }
 .contact form textarea {
     padding: 15px;
@@ -193,6 +194,7 @@ section .card img {
     outline: none;
     resize: none;
     border: 1px solid #bfbfbf;
+    font-size: 14px;
 }
 .contact form button {
     padding: 10px 20px;
@@ -216,4 +218,28 @@ section .card img {
         display: none;
     }
     
+}
+
+@media screen and (max-width: 860px) {
+    .navlinks {
+        z-index: 1;
+        padding: 20px 0;
+    }
+    .navlinks a {
+        z-index: -1;
+        position: fixed;
+        top: -220px;
+        right: 0;
+        width: 100%;
+        background-color: #7cb3f6;
+        display: inline-block;
+        text-align: center;
+        transition: top .2s;
+    }
+    .navlinks a.show {
+        top: 59px;
+    }
+    #hamburger {
+        display: block;
+    }
 }
