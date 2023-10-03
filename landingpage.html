@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <!--
     Header:
@@ -8,18 +8,183 @@
         link to css style sheet
 -->
 <head>
-
-    <meta charset="utf-8" />
-    <title>MusicRater - Welcome</title>
-
-    <link rel="stylesheet" href="landingpage.css" />
-
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <title>Your Music Rater - Welcome</title>
+    <link rel='stylesheet' href='landingpage2.css'/>
+    <link rel='stylesheet' href=' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'/>
 </head>
 
+<!--
+    Body:
+        navbar,
+-->
 <body>
 
+    <header>
+        <nav class="navbar container flex">
+            <!-- TODO: replace with an actual logo down the line -->
+            <h1 id='navlogo' class='logo'>
+                <span class='name'>Your Music Rater</span>
+                <span class='logoicon'>&#127925;</span>
+            </h1>
+            <div class="searchbar">
+                <input type="search" placeholder="Search">
+                <span class="fa fa-search"></span>
+            </div>
+            <!-- TODO: bug with onle one nav link showing up in mobile mode-->
+            <ul class="navlinks flex">
+                <li><a href='landingpage.html'>Home</a></li>
+                <li><a href='topsongs.html'>Charts</a></li>
+                <li><a href='#aboutsection'>About</a></li>
+                <li><a href='#faqsection'>FAQs</a></li>
+                <li><a href='#contactsection'>Contact</a></li>
+                <li><span id="hamburger" class='fas fa-bars'></span></li>
+                <li><span id="account-btn" class='fas fa-user'></span></li>
+            </ul>           
+        </nav>
+    </header> 
 
-<iframe src="topsongs.html"></iframe>
+    <!--
+        <li class='hamburger'><span class='fas fa-bars'></span></li>
+        <li class='account'><span class='fas fa-user'></span></li>
+    -->
+    <!-- homepage part 1, hero section -->
+    <section class="homepage" id="home">
+        <div class="content flex">
+            <img src="assets/monkeyband.png" alt="Band of monkeys" id="hpimg">
+            <div class="text">
+                <h1>The perfect complement</h1>
+                <p>to anyone who enjoys music! Share your favorite songs, hear what friends say
+                   about the latest albums, and get recommendations for your next favorite playlist.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- homepage pt 2, charts section -->
+    <section class="charts" id="charts">
+        <div class="container">
+            <iframe class="chart" src="topsongs.html">
+            </iframe>
+            <iframe class="chart" src="topsongs.html">
+            </iframe>
+        </div>
+
+    </section>
+
+    <!-- homepage part 2, useage section -->
+    <section class="use" id="usesection">
+        <div class="container">
+            <div class="use-title">
+                <h1>Simple and easy to use</h1>
+                <p>with a free online account.</p>
+            </div>
+            <ul class="cards flex">
+                <li class="card">
+                    <img src="assets/search.png" alt="Search for song">
+                    <h3>Find a song!</h3>
+                </li>
+                <li class="card">
+                    <img src="assets/rate.png" alt="Review the song">
+                    <h3>Give it stars!</h3>
+                </li>
+                <li class="card">
+                    <img src="assets/review.png" alt="Rate the song">
+                    <h3>Write a review!</h3>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- about us section -->
+    <section class="about" id="aboutsection">
+        <div class="container">
+            <div class="about-title">
+                <h1>About Us</h1>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae 
+                    quo libero quaerat aperiam ratione illo repellat omnis 
+                    magnam nostrum numquam, expedita molestias porro beatae 
+                    quibusdam voluptas delectus, animi eligendi. Eveniet.
+                </p>
+            </div>
+
+            <div class="row info">
+                <h2>Our Story</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores quibusdam ullam cupiditate, ad voluptatum ut temporibus natus veritatis est porro earum culpa totam! Ipsum cum ratione ducimus ab sunt.</p> 
+                
+                <h2>Our Vision</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores quibusdam ullam cupiditate, ad voluptatum ut temporibus natus veritatis est porro earum culpa totam! Ipsum cum ratione ducimus ab sunt.</p> 
+            </div>
+
+            <div class="row team">
+                <h2>Our Team</h2>
+                <ul>
+                    <li>Ryan Kobayashi</li>
+                    <li>Haoran Xu</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- frequently asked section -->
+    <section class="frequentlyasked" id="faqsection">
+        <div class="container">
+            <div class="faq-title">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- script for hamburger functionality in mobile mode -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $('nav ul div.menu .hamburger').click(function(){
+            $('nav ul div.menu .text').toggleClass("show");
+        });
+    </script>
+
+    <!-- contacts section-->
+    <section class="contact" id="contactsection">
+        <div class="container">
+            <div class="contact-title">
+                <h1>Contact Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, mollitia molestias quasi, aliquam nobis ut alias voluptatibus numquam vel necessitatibus, eius quod soluta vero neque delectus odio. Provident, voluptates tempore.</p>
+            </div>
+            <div class="row flex">
+                <div class="col information">
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 45 Wyllys Avenue, 
+                                                                 Middletown, CT 06457</p>
+                        <p><i class="fas fa-envelope"></i> info@yourmusicrater.com</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-globe"></i> www.yourmusicrater.com</p>
+                    </div>
+                </div>
+                <div class="class form">
+                    <form action="#">
+                        <input type="text" placeholder="Name*" required>
+                        <input type="email" placeholder="Email*" required>
+                        <textarea placeholder="Message*" required></textarea>
+                        <button id="submit" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span>Copyright (c) 2023 All Rights Reserved Your Music Rater</span>
+        </div>
+    </section>
 
 </body>
+
+
 </html>
