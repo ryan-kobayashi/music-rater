@@ -60,7 +60,6 @@ header {
 .navlinks {
     gap: 20px;
     list-style: none;
-    display: flex;
     flex: initial;
 }
 .navlinks a {
