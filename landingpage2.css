@@ -71,6 +71,7 @@ header {
 }
 .navlinks a:hover {
     background-color: rgb(56, 126, 248);
+    color: #f2f2f2;
 }
 #hamburger {
     text-align: center;
@@ -138,6 +139,10 @@ header {
     padding: 5px 10px 5px 10px;
 }
 
+.chart-head h2{
+    font-size: 17px;
+}
+
 .chart iframe{
     height: 500px;
     width: 100%;
@@ -174,6 +179,11 @@ section .card {
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
+.card h2{
+    font-size: 20px;
+}
+
 section .card img {
     height: auto;
     width: 100%;
