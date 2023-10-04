@@ -152,9 +152,8 @@ section .card {
     font-size: 20px;
 }
 section .card img {
-    aspect-ratio: 4 / 3;
-    width: 100%;
-    object-fit: cover;
+    height: 200px;
+    width: auto;
     margin-bottom: 20px;
 }
 
@@ -285,6 +284,7 @@ section .card img {
 /* responsiveness */
 @media screen and (max-width: 1080px) {
     #navlogo .name { display: none; }
+    section .card img { height: 160px;}
 }
 
 /* tablet dimensions */
@@ -305,34 +305,17 @@ section .card img {
         text-align: center;
         transition: top .2s;
     }
-    .navlinks a.show {
-        top: 59px;
-    }
-    #hamburger {
-        display: block;
-    }
-    .nav h1 {
-        font-size: 40px;
-    }
+    .navlinks a.show { top: 59px; }
+    #hamburger { display: block; }
+    .nav h1 { font-size: 40px; }
     /* text sizes */
-    section h1 {
-        font-size: 32px;
-    }
+    section h1 { font-size: 32px; }
     /* changes to about us section */
-    section .cards {
-        flex-direction: column;
-    }
-    section .cards .card {
-        width: calc((100% / 2.5));
-    }
+    section .cards { flex-direction: column; }
+    section .cards .card { width: calc((100% / 2.5)); }
+    section .card img { height: 130px; }
     /* changes to contact us section */
-    .contact .row {
-        flex-direction: column;
-    }
-    .contact .row .col {
-        width: 100%;
-    }
-    .contact .row .col:last-child {
-        margin-top: 40px;
-    }
+    .contact .row { flex-direction: column; }
+    .contact .row .col { width: 100%; }
+    .contact .row .col:last-child { margin-top: 40px; }
 }
