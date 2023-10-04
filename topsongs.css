@@ -20,7 +20,7 @@
     text-align: left;
     margin-top: 5px;
     text-decoration: none;
-    color: aliceblue;
+    color: black;
 }
 .song-container-text{
     margin: 5px;
@@ -31,7 +31,7 @@
 .song-artist{
     font-size: 15px;
     text-decoration: none;
-    color: aliceblue;
+    color: black;
 }
 
 .album-cover{
