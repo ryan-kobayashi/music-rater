@@ -46,7 +46,7 @@
 
 .rating{
     height: 10px;
-    width: auto;
+    width: 50px;
 }
 
 @media screen and (max-width: 896px) {

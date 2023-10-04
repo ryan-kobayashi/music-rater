@@ -153,7 +153,7 @@ section .card {
 }
 section .card img {
     height: 200px;
-    width: auto;
+    width: 300px;
     margin-bottom: 20px;
 }
 
@@ -165,7 +165,7 @@ section .card img {
     margin-top: 25px;
 }
 .chart{
-    height:550px;
+    height: 550px;
     width: 45%;
     position: relative;
     margin: 0 3% 0 3%;
@@ -284,7 +284,7 @@ section .card img {
 /* responsiveness */
 @media screen and (max-width: 1080px) {
     #navlogo .name { display: none; }
-    section .card img { height: 160px;}
+    section .card img { height: 160px; width: 240px; }
 }
 
 /* tablet dimensions */
@@ -313,7 +313,7 @@ section .card img {
     /* changes to about us section */
     section .cards { flex-direction: column; }
     section .cards .card { width: calc((100% / 2.5)); }
-    section .card img { height: 130px; }
+    section .card img { height: 130px; width: 190px }
     /* changes to contact us section */
     .contact .row { flex-direction: column; }
     .contact .row .col { width: 100%; }
