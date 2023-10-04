@@ -1,7 +1,30 @@
-Steven Xu and Ryan Kobayashi <br>
+# About
 
-This code is the html and css files for a website called Your Music Rater which allows users to rate music. <br>
+**Your Music Rater** is a simple website designed for music enthusiasts to rate
+their favorite songs and share them with others. This repository contains the
+necessary HTML and CSS files to create the static landing page for this website.
 
-The landingpage file is index.html and the second page represented in our iframes is the topsongs.html file. landingpage2.css is the css for index.html and topsongs.css is the css for topsongs.html. All of our images used are contained within the "assets" directory with star rating contained in the "star-ratings" directory. <br>
+# Files
+* **Landing Page**: The main page is `index.html`.
+* **Top Songs**: The second page, which is used within iframes, is `topsongs.html`.
+* `landingpage2.css`: This CSS file styles the landing page.
+* `topsongs.css`: This CSS file styles the top songs page.
 
-To run the code, run the index.html file locally in your browser.
+# Assets
+All images used in the website are stored in the `assets/` directory. Additionally,
+unique font icons are also located in this directory.
+
+# Useage
+To run the code and preview the website:
+1. Clone this repository.
+2. Open the `index.html` file in your browser.
+
+# Authors
+* Steven Xu
+* Ryan Kobayashi
+
+*Work distribution: 50/50*
+
+---
+
+*This site was designed and published as part of the COMP 333 Software Engineering class at Wesleyan University. This is a training exercise.*
