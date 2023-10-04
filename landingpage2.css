@@ -138,7 +138,7 @@ section .cards {
     justify-content: space-around;
 }
 section .card {
-    width: calc((100% / 3) - 70px);
+    width: calc((100% / 3) - 30px);
     text-align: center;
     list-style: none;
     background-color: #d7e7fa;
@@ -146,16 +146,15 @@ section .card {
     margin-bottom: 40px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-
 .card h2{
     font-size: 20px;
 }
-
 section .card img {
-    height: auto;
+    aspect-ratio: 4 / 3;
     width: 100%;
-    border-radius: 70%;
+    object-fit: cover;
     margin-bottom: 20px;
 }
 
@@ -324,7 +323,7 @@ section .card img {
         flex-direction: column;
     }
     section .cards .card {
-        width: calc((100% / 2) - 15px);
+        width: calc((100% / 2.5));
     }
     /* changes to contact us section */
     .contact .row {
@@ -335,12 +334,5 @@ section .card img {
     }
     .contact .row .col:last-child {
         margin-top: 40px;
-    }
-}
-
-/* smallest mobile dimensions */
-@media screen and (max-width: 640px) {
-    section .cards .card {
-        width: calc(100% / 2);
     }
 }
