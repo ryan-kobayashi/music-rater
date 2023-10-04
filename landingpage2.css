@@ -72,18 +72,19 @@ section h1 {
 
 /* navigation bar menu */
 .navlinks {
-    gap: 20px;
     list-style: none;
     flex: initial;
 }
 .navlinks a {
-    padding: 20px 0;
+    padding: 15px;
     display: inline-block;
     text-decoration: none;
     transition: 0.2s;
+    color: #222222;
 }
 .navlinks a:hover {
     background-color: rgb(56, 126, 248);
+    color: #f2f2f2;
 }
 
 /* navigation bar hamburger icon and account icon */
@@ -146,6 +147,11 @@ section .card {
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
+.card h2{
+    font-size: 20px;
+}
+
 section .card img {
     height: auto;
     width: 100%;
