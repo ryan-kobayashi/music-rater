@@ -1,4 +1,4 @@
-# Steven Xu and Ryan Kobayashi <br><br>
+Steven Xu and Ryan Kobayashi <br><br>
 
 This code is the html and css files for a website called Your Music Rater which allows users to rate music. <ber><br>
 
