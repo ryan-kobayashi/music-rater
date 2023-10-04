@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+/* general elements */
 * {
     font-family: "Roboto", sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 header {
     position: fixed;
     top: 0;
@@ -20,11 +19,21 @@ header {
     z-index: 100;
 }
 
+/* commonly used elements */
+section {
+    padding-top: 10%;
+    position: relative;
+    height: auto;
+}
+section h1 {
+    font-size: 37px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+}
 .flex {
     display: flex;
     align-items: center;
 }
-
 .container {
     max-width: 1200px;
     width: 100%;
@@ -32,10 +41,13 @@ header {
     padding: 0 20px;
 }
 
+
+/* navigation bar */
 .navbar {
     justify-content: space-between;
 }
 
+/* search bar in the navigation bar */
 .searchbar {
     height: 30px;
     width: 240px;
@@ -58,6 +70,7 @@ header {
     padding-top: 4px;
 }
 
+/* navigation bar menu */
 .navlinks {
     gap: 20px;
     list-style: none;
@@ -72,6 +85,8 @@ header {
 .navlinks a:hover {
     background-color: rgb(56, 126, 248);
 }
+
+/* navigation bar hamburger icon and account icon */
 #hamburger {
     text-align: center;
     cursor: pointer;
@@ -85,6 +100,7 @@ header {
     cursor: pointer;
 }
 
+/* hero section */
 .homepage {
     position: relative;
     width: 100%;
@@ -111,58 +127,7 @@ header {
     margin-left: -5.5% !important;
 }
 
-.chart-flex{
-    display: flex;
-    float: none;
-    justify-content: space-between;
-    margin-top: 25px;
-}
-
-.chart{
-    height:550px;
-    width: 45%;
-    position: relative;
-    margin: 0 3% 0 3%;
-}
-.chart-title {
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.chart-head{
-    font-size: 15px;
-    background-color: #d7e7fa;
-    float: left;
-    border-radius: 10px 10px 0 0;
-    border-style: none;
-    padding: 5px 10px 5px 10px;
-}
-
-.chart iframe{
-    height: 500px;
-    width: 100%;
-    position:relative;
-    border-radius: 0 10px 10px 10px;
-    /*
-    border-color: #d7e7fa;
-    border-style: solid;
-    border-width: 3px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-right: none;
-     */
-     border-style: none;
-}
-
-section {
-    padding-top: 10%;
-    position: relative;
-    height: auto;
-}
-section h1 {
-    font-size: 37px;
-    font-weight: 700px;
-    margin-bottom: 10px;
-}
+/* how to use website section */
 .use-title {
     text-align: center;
 }
@@ -188,6 +153,40 @@ section .card img {
     margin-bottom: 20px;
 }
 
+/* charts section */
+.chart-flex{
+    display: flex;
+    float: none;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.chart{
+    height:550px;
+    width: 45%;
+    position: relative;
+    margin: 0 3% 0 3%;
+}
+.chart-title {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.chart-head{
+    font-size: 15px;
+    background-color: #d7e7fa;
+    float: left;
+    border-radius: 10px 10px 0 0;
+    border-style: none;
+    padding: 5px 10px 5px 10px;
+}
+.chart iframe{
+    height: 500px;
+    width: 100%;
+    position:relative;
+    border-radius: 0 10px 10px 10px;
+    border-style: none;
+}
+
+/* about us section */
 .about-title {
     text-align: center;
 }
@@ -195,7 +194,7 @@ section .card img {
     margin-top: 30px;
 }
 .about .row {
-   padding: 0  10px;
+   padding: 0 10px;
 }
 .about h2 {
     margin: 30px 0 10px;
@@ -204,32 +203,30 @@ section .card img {
     padding-left: 20px;
 }
 
+/* frequently asked questions section */
 .faq-title{
     text-align: center;
 }
-
 .question-container{
     display: flex;
     flex-direction: column;
     margin: 20px 10% 0 10%;
 }
-
 .question{
     text-align: center;
     margin-top: 20px;
 }
-
 .question summary{
     background-color: #d7e7fa;
     padding: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
-
 .question p{
     margin-top: 20px;
 }
 
+/* contact us section */
 .contact .row {
     justify-content: space-between;
     margin: 60px 0 90px;
@@ -245,7 +242,7 @@ section .card img {
 .contact .row .col p i{
     margin-right: 10px;
 }
-.contact form input {
+.contact form input {   /* textbox */
     width: 100%;
     height: 45px;
     margin-bottom:  20px;
@@ -254,7 +251,7 @@ section .card img {
     border: 1px solid #bfbfbf;
     font-size: 14px;
 }
-.contact form textarea {
+.contact form textarea {    /* inside contact form text box */
     padding: 15px;
     width: 100%;
     height: 150px;
@@ -267,27 +264,27 @@ section .card img {
     padding: 10px 20px;
     border-radius: 6px;
     font-size: 16px;
-    color: #fff;
     margin-top: 10px;
     border: none;
-    background: #333;
+    background: #7cb3f6;
     cursor: pointer;
     transition: 0.2s;
 }
 
+/* footer section */
 .footer {
     background: #7cb3f6;
     padding: 20px 0;
 }
 
+/* responsiveness */
 @media screen and (max-width: 1080px) {
-    #navlogo .name {
-        display: none;
-    }
-    
+    #navlogo .name { display: none; }
 }
 
+/* tablet dimensions */
 @media screen and (max-width: 896px) {
+    /* implementing hamburger icon functionality */
     .navlinks {
         z-index: 1;
         padding: 20px 0;
@@ -312,15 +309,18 @@ section .card img {
     .nav h1 {
         font-size: 40px;
     }
+    /* text sizes */
     section h1 {
         font-size: 32px;
     }
+    /* changes to about us section */
     section .cards {
         flex-direction: column;
     }
     section .cards .card {
         width: calc((100% / 2) - 15px);
     }
+    /* changes to contact us section */
     .contact .row {
         flex-direction: column;
     }
@@ -332,8 +332,9 @@ section .card img {
     }
 }
 
+/* smallest mobile dimensions */
 @media screen and (max-width: 640px) {
     section .cards .card {
-        width: 100%
+        width: calc(100% / 2);
     }
 }
