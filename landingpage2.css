@@ -94,7 +94,7 @@ section h1 {
     display: none;
 }
 #hamburger:hover:before {
-    content: '\f00d';
+    content: '\ea0f';
 }
 #account-btn {
     text-align: center;
