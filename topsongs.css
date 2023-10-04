@@ -8,52 +8,50 @@
     display: flex;
     flex-direction: column;
 }
-
 .song-container{
-    background-color: #7ab1ff;
+    background-color: #94bef1;
     margin: 10px 10px 10px 10px;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
 }
-
 .song-title{
     font-size: 20px;
     text-align: left;
     margin-top: 5px;
-}
-
-.album-cover{
-    height: auto;
-    padding: 5px;
-}
-
-.album-img{
-    margin: 5px 0px 5px 5px;
-    width: 80px;
-    height: 80px;
-}
-
-.song-title {
     text-decoration: none;
     color: aliceblue;
 }
-
 .song-container-text{
     margin: 5px;
 }
-
 .song-text{
     font-size: 12px;
-
 }
-
 .song-artist{
     font-size: 15px;
     text-decoration: none;
     color: aliceblue;
 }
 
+.album-cover{
+    height: auto;
+    padding: 5px;
+}
+.album-img{
+    margin: 5px 0px 5px 5px;
+    width: 80px;
+    height: 80px;
+}
+
 .rating{
     height: 10px;
+    width: auto;
+}
+
+@media screen and (max-width: 896px) {
+    .album-img {
+        height: 70px;
+        width: 70px;
+    }
 }
