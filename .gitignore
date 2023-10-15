@@ -161,3 +161,4 @@ cython_debug/
 
 # Current project files
 **/.DS_Store
+.env
