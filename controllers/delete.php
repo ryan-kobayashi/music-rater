@@ -9,7 +9,7 @@ if (isset($_REQUEST['confirm-delete'])) {
     $result = $conn->query($sql);
     if ($result == TRUE) {
         echo "Successfully deleted review.";
-        header("Location: localhost/charts.html");
+        header("Location: $root/charts.html");
     } else {
         echo "Error: " . $sql . "</br>" . $conn->error;
     }
