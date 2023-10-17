@@ -17,25 +17,24 @@
             <h1 class="form__title">Sign Up</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username">
+                <input type="text" class="form__input" autofocus placeholder="Username" required>
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="text" class="form__input" placeholder="Password">
+                <input type="password" class="form__input" placeholder="Password" required>
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Confirm Password">
+                <input type="password" class="form__input" placeholder="Confirm Password" required>
                 <div class="form__input-error-message"></div>
             </div>
             <button class="form__button" type = "submit"> Continue</button>
             <button class="form__button" type = "reset"> Reset</button>
             <p class="form__text">
-                <a  class="form__link" href="login.html" id="linkLogin">Already have an accout? Sign in!</a>
+                <a class="form__link" href="login.php" id="linkLogin">Already have an accout? Sign in!</a>
             </p>
         </form>
     </div>
-
 
 </body>
 
