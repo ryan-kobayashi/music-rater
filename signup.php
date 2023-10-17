@@ -17,15 +17,18 @@
             <h1 class="form__title">Sign Up</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username" required>
+                <input type="text" class="form__input" autofocus placeholder="Username" required
+                minlength="3" maxlength="20" >
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Password" required>
+                <input type="password" class="form__input" placeholder="Password" required
+                minlength="10" maxlength="25">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Confirm Password" required>
+                <input type="password" class="form__input" placeholder="Confirm Password" required
+                minlength="10" maxlength="25">
                 <div class="form__input-error-message"></div>
             </div>
             <button class="form__button" type = "submit"> Continue</button>
