@@ -1,6 +1,6 @@
 <?php /* connection between webpage and database */
 
-$env = parse_ini_file('.env');
+$env = parse_ini_file('../.env');
 
 $servername = $env["SERVER_NAME"];
 $dbname = $env["DATABASE_NAME"];
