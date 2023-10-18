@@ -3,6 +3,12 @@
 # A checker to see if the username/password combo is valid
 $is_invalid = false;
 
+session_start();
+
+if($_SESSION["loggedin"]){
+        header("Location: controllers/read.php");
+}
+
 # If the submitted form is of type post, then run the php
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 

@@ -17,8 +17,11 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
     $song = $_POST['song'];
     $rating = $_POST['rating'];
 
-    $sql_id = "SELECT `id` FROM `ratings` WHERE `username`='$username' AND `artist`='$artist' AND `song`='$song'";
-    $result = mysqli_query($conn, $sql_id);
+    $sql_id = "SELECT `id` FROM `ratings` WHERE `username`= ? AND `artist`= ? AND `song`= ?";
+    $stmt = mysqli_prepare($conn, $sql_id);
+    mysqli_stmt_bind_param($stmt, "sss", $username, $artist, $song);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_array($result);
 
     if ($result->num_rows == 0) {
@@ -26,10 +29,13 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
                window.onload = function () { alert("You have not rated this song. Please create a rating instead."); }
         </script>';
     } else {
-        $sql = "UPDATE `ratings` SET `rating`='$rating' WHERE `id`='$row[0]'";
-        $result = mysqli_query($conn, $sql);
+        $sql = "UPDATE `ratings` SET `rating`='$rating' WHERE `id`= ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $row[0]);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        if ($result) {
+        if ($stmt) {
             echo '<script>
             alert("Update successful.");
             window.location.href="read.php";
@@ -38,9 +44,12 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
     }
 } else {
     $rating_id = $_GET['id'];
-    $sql_prepop = "SELECT * FROM `ratings` WHERE `id`='$rating_id'";
-    $result = mysqli_query($conn, $sql_prepop);
-    if ($result) {
+    $sql_prepop = "SELECT * FROM `ratings` WHERE `id`= ?";
+    $stmt = mysqli_prepare($conn, $sql_prepop);
+    mysqli_stmt_bind_param($stmt, "s", $rating_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if ($stmt) {
         $row = mysqli_fetch_assoc($result);
         $artist = $row['artist'];
         $song = $row['song'];

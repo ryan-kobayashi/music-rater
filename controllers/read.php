@@ -1,7 +1,7 @@
 <?php /* to check if the user is logged in */
 session_start();
 if(!$_SESSION["loggedin"]) {
-    header("Location: $root/login.php");
+    header("Location: ../login.php");
     exit();
 } else {
     echo '<p>You are logged in as user: ' . $_SESSION["username"] . '</p>';
@@ -36,11 +36,11 @@ echo '<a href="logout.php">Log Out</a>';
             </div>
             <!-- TODO: bug with onle one nav link showing up in mobile mode-->
             <ul class="navlinks flex">
-                <li><a href='../index.html'>Home</a></li>
-                <li><a href='../charts.html'>Charts</a></li>
-                <li><a href='../index.html#aboutsection'>About</a></li>
-                <li><a href='../index.html#faqsection'>FAQs</a></li>
-                <li><a href='../index.html#contactsection'>Contact</a></li>
+                <li><a href='../index.php'>Home</a></li>
+                <li><a href='../index.php#charts'>Charts</a></li>
+                <li><a href='../index.php#aboutsection'>About</a></li>
+                <li><a href='../index.php#faqsection'>FAQs</a></li>
+                <li><a href='../index.php#contactsection'>Contact</a></li>
                 <li><span id="hamburger" class='icon-bars-solid'></span></li>
                 <li><span id="account-btn" class='icon-user-solid'></span></li>
             </ul>
@@ -49,7 +49,7 @@ echo '<a href="logout.php">Log Out</a>';
 
     <main>
         <?php /* to display the ratings database */
-        echo '<a href="update.php">Log Out</a>';
+        echo '<a href="create.php">Add New Song Rating</a>';
         include "config.php";
         $sql = "SELECT * FROM `ratings`";
         $result = mysqli_query($conn, $sql);
