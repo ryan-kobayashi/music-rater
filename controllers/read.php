@@ -6,6 +6,7 @@ if(!$_SESSION["loggedin"]) {
 } else {
     echo '<p>You are logged in as user: ' . $_SESSION["username"] . '</p>';
 }
+echo '<a href="logout.php">Log Out</a>';
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +49,7 @@ if(!$_SESSION["loggedin"]) {
 
     <main>
         <?php /* to display the ratings database */
+        echo '<a href="update.php">Log Out</a>';
         include "config.php";
         $sql = "SELECT * FROM `ratings`";
         $result = mysqli_query($conn, $sql);
