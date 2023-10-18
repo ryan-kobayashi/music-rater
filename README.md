@@ -32,6 +32,9 @@ Set up your MySQL database to contain two tables, one of which stores the `users
 
 `username` is a primary key for the `users` table and a foreign key for the `ratings` table. Move any relevant code and files inside the `htdocs/` directory, which can be found as a subdirectory of where XAMPP is installed.
 
+# Production Environment
+The link to our website through infinityfree is sql211.infinityfree.com.
+
 # Useage
 To run the code and preview the website on your local machine:
 1. Make sure all prerequisities are satisfied, such as installing any relevant software.
