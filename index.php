@@ -54,7 +54,7 @@ include "config.php";
             </div>
             <!-- TODO: bug with onle one nav link showing up in mobile mode-->
             <ul class="navlinks flex">
-                <li><a href='index.html'>Home</a></li>
+                <li><a href='index.php'>Home</a></li>
                 <li><a href='#charts'>Charts</a></li>
                 <li><a href='#aboutsection'>About</a></li>
                 <li><a href='#faqsection'>FAQs</a></li>
