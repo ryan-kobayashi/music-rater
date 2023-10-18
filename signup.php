@@ -33,13 +33,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $invalidcpassword = true;
     }
 
-    $sql = "SELECT * FROM users WHERE username='$username'";
-
-    $result = mysqli_query($conn, $sql);
-
-    $num = mysqli_num_rows($result);
-
     # Validation that the username is not already taken
+    $sql = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($conn, $sql);
+    $num = mysqli_num_rows($result);
     if ($num !== 0){
         $takenusername = true;
     }
@@ -59,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             
         $_SESSION["username"] = $username;
         $_SESSION["loggedin"] = true;
-        
+
         # Here we want to add where the page redirects the user after logging in.
         header("Location: controllers/read.php");
         exit;
