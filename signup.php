@@ -33,22 +33,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $invalidcpassword = true;
     }
 
-    # Validation that the username is not already taken
-    $sql = "SELECT * FROM users WHERE username='$username'";
-    $result = mysqli_query($conn, $sql);
-    $num = mysqli_num_rows($result);
+    # Validation that the username is not already taken, also by parameterizing the string from post, we prevent SQL injection.
+    $sql = "SELECT * FROM users WHERE username= ?";
+    $stmt = $conn->stmt_init();
+    if ( ! $stmt->prepare($sql)){
+        die("SQL error: " . $conn->error);
+    }
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $num = mysqli_num_rows($stmt->get_result());
     if ($num !== 0){
         $takenusername = true;
     }
 
+    $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
     if (!$takenusername && !$invalidcpassword && !$invalidpassword && !$invalidusername){
         # This chunk of code prevents SQL Injection
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
         $stmt = $conn->stmt_init();
         if ( ! $stmt->prepare($sql)){
             die("SQL error: " . $conn->error);
         }
-        $stmt->bind_param("ss", $username, $password);
+        $stmt->bind_param("ss", $username, $password_hash);
         $stmt->execute();
 
         # This will start a session and bring you to read.php.

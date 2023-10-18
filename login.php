@@ -11,14 +11,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST["password"];
 
     # Find the user that the username section of the form is referring to
-    $sql = "SELECT * FROM users WHERE username='$username'";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM users WHERE username= ?";
+    $stmt = $conn->stmt_init();
+    if ( ! $stmt->prepare($sql)){
+        die("SQL error: " . $conn->error);
+    }
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
     # If the user exists and the password is correct, start a session and set the global session "user" variable to the user's username
     if ($user) {
 
-        if ($password==$user["password"]){
+        if (password_verify($_POST["password"], $user["password_hash"])){
             
             session_start();
             
