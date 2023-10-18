@@ -5,7 +5,7 @@ their favorite songs and share them with others. This repository contains the
 necessary HTML and CSS files to create the static landing page for this website.
 
 # Files
-* **Landing Page**: The main page is `index.html`.
+* **Landing Page**: The main page is `index.php`.
 * **Top Songs**: The second page, which is used within iframes, is `charts.html`.
 * `controllers/`: A directory that contains all the relevant PHP files for CRUD fuctionality.
 * `login.php`/`signup.php`: Implements login and signup functionality, along with token authentication and session tracking.
