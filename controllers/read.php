@@ -1,7 +1,7 @@
 <?php /* to check if the user is logged in */
 session_start();
 if(!$_SESSION["loggedin"]) {
-    header("Location: $root/login.html");
+    header("Location: $root/login.php");
     exit();
 } else {
     echo '<p>You are logged in as user: ' . $_SESSION["username"] . '</p>';
