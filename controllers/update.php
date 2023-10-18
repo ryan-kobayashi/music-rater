@@ -36,6 +36,16 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
             </script>';
         }
     }
+} else {
+    $rating_id = $_GET['id'];
+    $sql_prepop = "SELECT * FROM `ratings` WHERE `id`='$rating_id'";
+    $result = mysqli_query($conn, $sql_prepop);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $artist = $row['artist'];
+        $song = $row['song'];
+        $rating = $row['rating'];
+    }
 }
 
 ?>
@@ -82,12 +92,15 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
     <?php echo "Username: " .$_SESSION["username"]; ?>
     <form class="form" action="update.php" method="post" id="update">
         <div class="form_input_group">
-            <input type="text" class="form_input" name="artist" autofocus placeholder="Artist" required>
-            <input type="text" class="form_input" name="song" autofocus placeholder="Song" required>
-            <input type="number" class="form_input" name="rating" autofocus placeholder="Rating" required min="1" max="5">
+            <label>Artist</label>
+            <input type="text" class="form_input" name="artist" value="<?php echo $artist?>" required>
+            <label>Song</label>
+            <input type="text" class="form_input" name="song" value="<?php echo $song ?>" required>
+            <label>Rating</label>
+            <input type="number" class="form_input" name="rating" value="<?php echo $rating ?>" min="1" max="5" required>
         </div>
         <input type="submit" value="Submit">
+        <?php echo '<a href="read.php">Cancel</a>'; ?>
     </form>
-    <?php echo '<a href="read.php">Cancel</a>'; ?>
 
 <body>

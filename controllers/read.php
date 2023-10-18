@@ -79,11 +79,11 @@ echo '<a href="logout.php">Log Out</a>';
                         <td><?php echo $row['artist']; ?></td>
                         <td><?php echo $row['song']; ?></td>
                         <td><?php echo $row['rating']; ?></td>
-                        <td><?php echo '<a href="view.php?Id='.$row['id'].'">View</a>'; ?>
+                        <td><?php echo '<a href="view.php?id='.$row['id'].'">View</a>'; ?>
                     <?php
                         if ($_SESSION['username'] == $row['username']) {
-                            echo '<a href="update.php?Id=' .$row['id'].'">Update </a>';
-                            echo '<a href="delete.php?Id='.$row['id'].'">Delete</a>';
+                            echo '<a href="update.php?id=' .$row['id'].'">Update </a>';
+                            echo '<a href="delete.php?id='.$row['id'].'">Delete</a>';
                         }
                     ?>
                     <?php
