@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    
+
     session_start();
 
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $username = $_POST["username"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
-    
+
     # Validation that username is between 3 and 20 characters.
     if (strlen($username) < 3 || strlen($username) > 20){
         $invalidusername = true;
@@ -39,9 +39,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 
     # Validation that the username is not already taken, also by parameterizing the string from post, we prevent SQL injection.
-    $sql = "SELECT * FROM users WHERE username= ?";
+    $sql = "SELECT * FROM `users` WHERE `username`=?";
     $stmt = $conn->stmt_init();
-    if ( ! $stmt->prepare($sql)){
+    if ( !$stmt->prepare($sql) ) {
         die("SQL error: " . $conn->error);
     }
     $stmt->bind_param("s", $username);
@@ -51,13 +51,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $takenusername = true;
     }
 
-    $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
     if (!$takenusername && !$invalidcpassword && !$invalidpassword && !$invalidusername){
         # This chunk of code prevents SQL Injection
-        $sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
+        $sql = "INSERT INTO `users` (`username`, `password`) VALUES (?, ?)";
         $stmt = $conn->stmt_init();
-        if ( ! $stmt->prepare($sql)){
+        if ( !$stmt->prepare($sql) ) {
             die("SQL error: " . $conn->error);
         }
         $stmt->bind_param("ss", $username, $password_hash);
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         # This will start a session and bring you to read.php.
         session_start(['cookie_lifetime' => 86400,]);
-            
+
         $_SESSION["username"] = $username;
         $_SESSION["loggedin"] = true;
 
@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         header("Location: controllers/read.php");
         exit;
     }
-    
+
 }
 ?>
 
@@ -86,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <meta name="description" content="The latest and hottest music rated by users of Your Music Rater!" />
     <title>Your Music Rater - Sign Up</title>
     <!-- This is the blurb underneath search results -->
-    <link rel="preload stylesheet" as="style" href="login.css" />   
+    <link rel="preload stylesheet" as="style" href="login.css" />
 </head>
 
 <body>
@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <div class="form__input-error-message">Enter a username with 3 to 20 characters</div>
                 <?php endif; ?>
                 <?php if ($takenusername): ?>
-                <div class="form__input-error-message">Username taken :(</div>
+                <div class="form__input-error-message">Username taken :</div>
                 <?php endif; ?>
 
             </div>
