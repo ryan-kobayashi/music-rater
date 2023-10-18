@@ -17,7 +17,8 @@ if(!$_SESSION["loggedin"]) {
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name="description" content="See the newest song rantings by users of Your Music Rater!">
     <title>Your Music Rater - Ratings</title>
-    <link rel="stylesheet" href="iconfontstyle.css"/>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../iconfontstyle.css"/>
 </head>
 
 <body>
@@ -34,11 +35,11 @@ if(!$_SESSION["loggedin"]) {
             </div>
             <!-- TODO: bug with onle one nav link showing up in mobile mode-->
             <ul class="navlinks flex">
-                <li><a href='landingpage.html'>Home</a></li>
-                <li><a href='charts.html'>Charts</a></li>
-                <li><a href='#aboutsection'>About</a></li>
-                <li><a href='#faqsection'>FAQs</a></li>
-                <li><a href='#contactsection'>Contact</a></li>
+                <li><a href='../index.html'>Home</a></li>
+                <li><a href='../charts.html'>Charts</a></li>
+                <li><a href='../index.html#aboutsection'>About</a></li>
+                <li><a href='../index.html#faqsection'>FAQs</a></li>
+                <li><a href='../index.html#contactsection'>Contact</a></li>
                 <li><span id="hamburger" class='icon-bars-solid'></span></li>
                 <li><span id="account-btn" class='icon-user-solid'></span></li>
             </ul>
@@ -76,17 +77,18 @@ if(!$_SESSION["loggedin"]) {
                         <td><?php echo $row['artist']; ?></td>
                         <td><?php echo $row['song']; ?></td>
                         <td><?php echo $row['rating']; ?></td>
-                    </tr>
+                        <td><?php echo '<a href="view.php?Id='.$row['id'].'">View</a>'; ?>
                     <?php
                         if ($_SESSION['username'] == $row['username']) {
-                            echo '<a href="edit_song.php?GetID=' .$row['id'].'">Update </a>';
-                            echo '<a href="delete_song.php?Del='.$row['id'].'">Delete</a>';
+                            echo '<a href="update.php?Id=' .$row['id'].'">Update </a>';
+                            echo '<a href="delete.php?Id='.$row['id'].'">Delete</a>';
                         }
                     ?>
                     <?php
                             }
                         }
                     ?>
+                    </tr>
                 </tbody>
             </table>
         </div>
