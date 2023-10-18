@@ -1,3 +1,39 @@
+<?php
+
+# A checker to see if the username/password combo is valid
+$is_invalid = false;
+
+# If the submitted form is of type post, then run the php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    include 'config.php';
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    # Find the user that the username section of the form is referring to
+    $sql = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($conn, $sql);
+    $user = $result->fetch_assoc();
+
+    # If the user exists and the password is correct, start a session and set the global session "user" variable to the user's username
+    if ($user) {
+
+        if ($password==$user["password"]){
+            
+            session_start();
+            
+            $_SESSION["user"] = $user["username"];
+
+            # Here we want to add where the page redirects the user after logging in.
+            header("Location: ");
+            exit;
+        }
+    }
+    
+    $is_invalid = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +51,26 @@
     <!-- contains the form and the back button -->
     <div class="container">
         <a href="signup.php" class="back-button">Go back</a>
-        <form class="form" id="login">
+        <form class="form" action="login.php" method="post" id="login">
             <h1 class="form__title">Login</h1>
-            <div class="form__message form__message--error"></div>
+
+            <?php if ($is_invalid): ?>
+            <div class="form__message form__message--error">Invalid login.</div>
+            <?php endif; ?>
+
             <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username" required>
+                <input type="text" 
+                       class="form__input" 
+                       id="username" 
+                       name="username" 
+                       autofocus 
+                       placeholder="Username" 
+                       value="<?= htmlspecialchars($_POST["username"] ?? "") ?>"
+                       required>
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Password" required>
+                <input type="password" class="form__input" id="password" name="password" placeholder="Password" required>
                 <div class="form__input-error-message"></div>
             </div>
             <button class="form__button" type = "submit"> Continue</button>
