@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $stmt->execute();
 
         # This will start a session and bring you to read.php.
-        session_start();
+        session_start(['cookie_lifetime' => 86400,]);
             
         $_SESSION["username"] = $username;
         $_SESSION["loggedin"] = true;

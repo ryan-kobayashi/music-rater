@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if (password_verify($_POST["password"], $user["password_hash"])){
             
-            session_start();
-            
+            session_start(['cookie_lifetime' => 86400,]);
+            session_regenerate_id();
             $_SESSION["username"] = $user["username"];
             $_SESSION["loggedin"] = true;
             # Here we want to add where the page redirects the user after logging in.
