@@ -4,7 +4,7 @@ session_start();
 
 # if not logged in, redirect to login page
 if(!$_SESSION["loggedin"]) {
-    header("Location: $root/login.php");
+    header("Location: ../login.php");
     exit();
 } else {
     include "config.php";
@@ -22,8 +22,11 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
     # check if an entry already exists
     $sql = "SELECT `id`
             FROM `ratings`
-            WHERE `username`='$username' AND `artist`='$artist' AND `song`='$song'";
-    $result = mysqli_query($conn, $sql);
+            WHERE `username`=? AND `artist`=? AND `song`=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sss", $username, $artist, $song);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     # if an entry exists, create popup window that notifies user to update ratings instead
     if ($result->num_rows > 0) {
@@ -33,11 +36,17 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
         </script>';
     # if an entry does not exist, create sql query to create new entry in db
     } else {
-        $sql = "INSERT INTO `ratings`(`username`, `artist`, `song`, `rating`)
-                VALUES ('$username', '$artist', '$song', '$rating')";
-        $result = mysqli_query($conn, $sql);
+        $sql = "INSERT INTO `ratings` (`username`, `artist`, `song`, `rating`)
+                VALUES (? , ?, ?, ?)";
+        $stmt = $conn->stmt_init();
+        if ( ! $stmt->prepare($sql)){
+            die("SQL error: " . $conn->error);
+        }
+        $stmt->bind_param("ssss", $username, $artist, $song, $rating);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($result) {
+        if ($stmt) {
             echo '<script>
                    alert("New rating created successfully.");
                    window.location.href="read.php";
@@ -74,11 +83,11 @@ if (isset($_POST['artist']) && isset($_POST['song']) && isset($_POST['rating']))
             </div>
             <!-- TODO: bug with onle one nav link showing up in mobile mode-->
             <ul class="navlinks flex">
-                <li><a href='../index.html'>Home</a></li>
-                <li><a href='../charts.html'>Charts</a></li>
-                <li><a href='../index.html#aboutsection'>About</a></li>
-                <li><a href='../index.html#faqsection'>FAQs</a></li>
-                <li><a href='../index.html#contactsection'>Contact</a></li>
+                <li><a href='../index.php'>Home</a></li>
+                <li><a href='../index.php#charts'>Charts</a></li>
+                <li><a href='../index.php#aboutsection'>About</a></li>
+                <li><a href='../index.php#faqsection'>FAQs</a></li>
+                <li><a href='../index.php#contactsection'>Contact</a></li>
                 <li><span id="hamburger" class='icon-bars-solid'></span></li>
                 <li><span id="account-btn" class='icon-user-solid'></span></li>
             </ul>

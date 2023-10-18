@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+include "config.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -48,13 +55,19 @@
             <!-- TODO: bug with onle one nav link showing up in mobile mode-->
             <ul class="navlinks flex">
                 <li><a href='index.html'>Home</a></li>
-                <li><a href='charts.html'>Charts</a></li>
+                <li><a href='#charts'>Charts</a></li>
                 <li><a href='#aboutsection'>About</a></li>
                 <li><a href='#faqsection'>FAQs</a></li>
                 <li><a href='#contactsection'>Contact</a></li>
                 <li><span id="hamburger" class='icon-bars-solid'></span></li>
                 <li><a href="signup.php">
+
+                    <?php if (! $_SESSION["loggedin"]): ?>
                     <span id="account-btn" class='icon-user-solid'></span>
+                    <?php else: ?>
+                        <?php echo $_SESSION["username"]; ?>
+                    <?php endif; ?>
+
                 </a></li>
             </ul>
         </nav>

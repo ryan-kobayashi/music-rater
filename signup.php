@@ -2,6 +2,11 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
     
+    session_start();
+
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
+        header("Location: controllers/read.php");
+    }
 
     $invalidusername = false;
     $takenusername = false;
@@ -86,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 <body>
     <div class="container">
-        <a href="index.html" class="back-button">Go back</a>
+        <a href="index.php" class="back-button">Go back</a>
         <form class="form" action="signup.php" method="post" id="signup">
             <h1 class="form__title">Sign Up</h1>
             <div class="form__message form__message--error"></div>

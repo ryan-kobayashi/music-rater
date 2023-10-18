@@ -3,7 +3,7 @@
 session_start();
 
 if(!$_SESSION["loggedin"]) {
-    header("Location: $root/login.php");
+    header("Location: ../login.php");
     exit();
 } else {
     include "config.php";
@@ -16,11 +16,14 @@ $ratings_id = $_GET['id'];
 
 if (isset($_POST['id'])){
     $ratings_id = $_POST['id'];
-    $sql = "DELETE FROM `ratings` WHERE `id`='$ratings_id'";
-    $result = mysqli_query($conn, $sql);
-    if ($result == TRUE) {
+    $sql = "DELETE FROM `ratings` WHERE `id`= ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $ratings_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if ($stmt) {
         echo "Successfully deleted review.";
-        header("Location: $root/controllers/read.php");
+        header("Location: ../controllers/read.php");
     } else {
         echo "Error: " . $sql . "</br>" . $conn->error;
     }
@@ -54,18 +57,18 @@ if (isset($_POST['id'])){
             </div>
             <!-- TODO: bug with onle one nav link showing up in mobile mode-->
             <ul class="navlinks flex">
-                <li><a href='../index.html'>Home</a></li>
+                <li><a href='../index.php'>Home</a></li>
                 <li><a href='../charts.html'>Charts</a></li>
-                <li><a href='../index.html#aboutsection'>About</a></li>
-                <li><a href='../index.html#faqsection'>FAQs</a></li>
-                <li><a href='../index.html#contactsection'>Contact</a></li>
+                <li><a href='../index.php#aboutsection'>About</a></li>
+                <li><a href='../index.php#faqsection'>FAQs</a></li>
+                <li><a href='../index.php#contactsection'>Contact</a></li>
                 <li><span id="hamburger" class='icon-bars-solid'></span></li>
                 <li><span id="account-btn" class='icon-user-solid'></span></li>
             </ul>
         </nav>
     </header>
 
-    <h1>Delete Rating</h1>
+    <h1 style="margin-top = 10%">Delete Rating</h1>
     <p>Are you sure you want to delete this rating?</p>
     <form method="post" action="delete.php">
         <input type="hidden" name="id" value="<?php echo $ratings_id; ?>">
