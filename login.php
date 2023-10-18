@@ -22,10 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             
             session_start();
             
-            $_SESSION["user"] = $user["username"];
-
+            $_SESSION["username"] = $user["username"];
+            $_SESSION["loggedin"] = true;
             # Here we want to add where the page redirects the user after logging in.
-            header("Location: ");
+            header("Location: controllers/read.php");
             exit;
         }
     }
