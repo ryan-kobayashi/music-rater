@@ -87,17 +87,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <label for="username"></label>
                 <input type="text" class="form__input" id="username" name="username" autofocus placeholder="Username" required
                 minlength="3" maxlength="20" >
-                <div class="form__input-error-message"></div>
+
+                <?php if ($invalidusername): ?>
+                <div class="form__input-error-message">Enter a username with 3 to 20 characters</div>
+                <?php endif; ?>
+                <?php if ($takenusername): ?>
+                <div class="form__input-error-message">Username taken :(</div>
+                <?php endif; ?>
+
             </div>
             <div class="form__input-group">
                 <input type="password" class="form__input" id="password" name="password" placeholder="Password" required
                 minlength="10" maxlength="25">
-                <div class="form__input-error-message"></div>
+
+                <?php if ($invalidpassword): ?>
+                <div class="form__input-error-message">Enter a password with 10 to 25 characters</div>
+                <?php endif; ?>
+
             </div>
             <div class="form__input-group">
                 <input type="password" class="form__input" id="cpassword" name="cpassword" placeholder="Confirm Password" required
                 minlength="10" maxlength="25">
-                <div class="form__input-error-message"></div>
+
+                <?php if ($invalidcpassword): ?>
+                <div class="form__input-error-message">Make sure passwords match.</div>
+                <?php endif; ?>
+
             </div>
             <button class="form__button" type = "submit"> Continue</button>
             <button class="form__button" type = "reset"> Reset</button>
