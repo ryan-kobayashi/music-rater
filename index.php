@@ -62,7 +62,7 @@ include "config.php";
                 <li><span id="hamburger" class='icon-bars-solid'></span></li>
                 <li><a href="signup.php">
 
-                    <?php if (! $_SESSION["loggedin"]): ?>
+                    <?php if (! isset($_SESSION["loggedin"]) || ! $_SESSION["loggedin"]): ?>
                     <span id="account-btn" class='icon-user-solid'></span>
                     <?php else: ?>
                         <?php echo $_SESSION["username"]; ?>

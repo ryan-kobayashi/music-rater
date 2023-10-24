@@ -5,7 +5,7 @@ $is_invalid = false;
 
 session_start();
 
-if($_SESSION["loggedin"]){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
         header("Location: controllers/read.php");
 }
 
