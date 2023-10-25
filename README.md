@@ -49,6 +49,13 @@ To run the code and preview the website on your local machine:
 
 *Work distribution: 50/50*
 
+# Citations
+Referenced Videos:
+
+Login/Signup:
+* [https://www.youtube.com/watch?v=3GsKEtBcGTk](https://www.youtube.com/watch?v=3GsKEtBcGTk)
+* [https://www.youtube.com/watch?v=5L9UhOnuos0](https://www.youtube.com/watch?v=5L9UhOnuos0)
+
 ---
 
 *This site was designed and published as part of the COMP 333 Software Engineering class at Wesleyan University. This is a training exercise.*
